@@ -1,9 +1,10 @@
 import java.util.Objects;
 
 public class Book {
-    private String name;
-    private String author;
-    private String isbn;
+    private final String name;
+    private final String author;
+    private final String isbn;
+    private int numberOfBook = 1;
 
     public Book (String name, String author, String isbn){
         this.name = name;
@@ -23,13 +24,24 @@ public class Book {
         return isbn;
     }
 
+    public void increaseNumberOfBook(){
+        numberOfBook++;
+    }
+    public void decreaseNumberOfBook(){
+        numberOfBook--;
+    }
+
+    public int getNumberOfBook(){
+        return numberOfBook;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", isbn='" + isbn + '\'' +
-                '}';
+                '}'+"\n";
     }
 
     @Override

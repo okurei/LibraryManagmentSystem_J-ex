@@ -1,5 +1,8 @@
 public class Main {
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        TestClass test = new TestClass();
+        test.run();
+    }
 }
 
 /*Exercise: Library Management System
