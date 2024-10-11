@@ -11,11 +11,11 @@ public class MainMenu {
         System.out.println("1 to add a new book");
         System.out.println("2 to remove a book");
         System.out.println("3 to search for a book by title");
-        System.out.println("4 to search for a book by ISBN");
+        System.out.println("4 to search for the number of copy by ISBN");
         System.out.println("5 to display all the book in the library");
         System.out.println("6 to count the total number of book");
         System.out.println("7 to exit");
-        String selection = scan.next();
+        String selection = scan.nextLine();
         switch (selection){
             case "1" -> library.addBook();
             case "2" -> library.removeBook(library.getInfo("ISBN of the book"));

@@ -8,13 +8,12 @@ public class Library {
     HashMap<String, Book> booksMap = new HashMap<>();
 
     public void addBook(){
-       String name = getInfo("Insert the name of the book: ");
-       String author = getInfo("Insert the author of the book: ");
        String isbn = getInfo("Insert the isbn of the book: ");
        if (booksMap.containsKey(isbn)){
            booksMap.get(isbn).increaseNumberOfBook();
+           System.out.println("Copy registered");
        }else{
-           Book book = new Book(name, author, isbn);
+           Book book = new Book(getInfo("Insert the name of the book: "), getInfo("Insert the author of the book: "), isbn);
            booksMap.put(isbn, book);
            insertBookInOrder(book);
        }
@@ -65,7 +64,7 @@ public class Library {
 
     public String getInfo(String question){
         System.out.printf(question);
-        return scan.next();
+        return scan.nextLine();
     }
 
     public void addBookForTest(String name, String author, String isbn){
